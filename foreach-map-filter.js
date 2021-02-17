@@ -1,19 +1,21 @@
-/*
-Write a function called doubleValues which accepts an array and returns a new array with all the values in the array passed to the function doubled
+/**
+ * /*
+ * Write a function called doubleValues which accepts an array and returns a new array with all the values in the array passed to the function doubled
+ *
+ * Examples:
+ *     doubleValues([1,2,3]) // [2,4,6]
+ *     doubleValues([5,1,2,3,10]) // [10,2,4,6,20]
+ *
+ * @format
+ */
 
-Examples:
-    doubleValues([1,2,3]) // [2,4,6]
-    doubleValues([5,1,2,3,10]) // [10,2,4,6,20]
-
-*/
-function doubleValues(arr){
-    let myArray = [];
-    arr.forEach(function(val){
-        myArray.push(val * 2);
-    });
-    return myArray;
+function doubleValues(arr) {
+  let myArray = [];
+  arr.forEach(function (val) {
+    myArray.push(val * 2);
+  });
+  return myArray;
 }
-
 
 /*
 Write a function called onlyEvenValues which accepts an array and returns a new array with only the even values in the array passed to the function
@@ -23,14 +25,14 @@ Examples:
     onlyEvenValues([5,1,2,3,10]) // [2,10]
 
 */
-function onlyEvenValues(arr){
-    let myArray = [];
-    arr.forEach(function(val){
-        if(val%2 === 0){
-            myArray.push(val);
-        }
-    });
-    return myArray;
+function onlyEvenValues(arr) {
+  let myArray = [];
+  arr.forEach(function (val) {
+    if (val % 2 === 0) {
+      myArray.push(val);
+    }
+  });
+  return myArray;
 }
 
 /*
@@ -41,12 +43,12 @@ Examples:
     showFirstAndLast(['hi', 'goodbye', 'smile']) // ['hi', 'ge', 'se']
 
 */
-function showFirstAndLast(arr){
-    let myArray = [];
-    arr.forEach(function(val){
-        myArray.push(val[0] + val[val.length-1]);
-    });
-    return myArray;
+function showFirstAndLast(arr) {
+  let myArray = [];
+  arr.forEach(function (val) {
+    myArray.push(val[0] + val[val.length - 1]);
+  });
+  return myArray;
 }
 
 /*
@@ -58,13 +60,12 @@ Examples:
     // [{name: 'Elie', title:'instructor'}, {name: 'Tim', title:'instructor'}, {name: 'Matt', title:'instructor'}, {name: 'Colt', title:'instructor'}]
 
 */
-function addKeyAndValue(arr,key,value){
-    arr.forEach(function(val){
-        val[key] = value; 
-    });
-    return arr;
+function addKeyAndValue(arr, key, value) {
+  arr.forEach(function (val) {
+    val[key] = value;
+  });
+  return arr;
 }
-   
 
 /*
 Write a function called vowelCount which accepts a string and returns an object with the keys as the vowel and the values as the number of times the vowel appears in the string. This function should be case insensitive so a lowercase letter and uppercase letter should count
@@ -76,22 +77,21 @@ Examples:
     vowelCount('hmmm') // {};
     vowelCount('I Am awesome and so are you') // {i: 1, a: 4, e: 3, o: 3, u: 1};
 */
-function vowelCount(str){
-    let newString = str.toLowerCase();
-    const myArray = newString.split("")
-    const myObject = {};
-    
-    myArray.forEach(function(val){
-        if("aeiou".indexOf(val) !== -1){
-            if(myObject[val]){
-                myObject[val] += 1
-            }
-            else{
-                myObject[val] = 1
-            }
-        }
-    });
-    return myObject;
+function vowelCount(str) {
+  let newString = str.toLowerCase();
+  const myArray = newString.split('');
+  const myObject = {};
+
+  myArray.forEach(function (val) {
+    if ('aeiou'.indexOf(val) !== -1) {
+      if (myObject[val]) {
+        myObject[val] += 1;
+      } else {
+        myObject[val] = 1;
+      }
+    }
+  });
+  return myObject;
 }
 
 /*
@@ -102,12 +102,12 @@ Examples:
     doubleValuesWithMap([1,-2,-3]) // [2,-4,-6]
 */
 function doubleValuesWithMap(arr) {
-    let myArray = arr.map(function(val){
-        return val*2
-    })
-    return myArray;
+  let myArray = arr.map(function (val) {
+    return val * 2;
+  });
+  return myArray;
 }
-   
+
 /*
 Write a function called valTimesIndex which accepts an array and returns a new array with each value multiplied by the index it is currently at in the array.
 
@@ -116,11 +116,11 @@ Examples:
     valTimesIndex([1,-2,-3]) // [0,-2,-6]
 */
 
-function valTimesIndex(arr){
-    let myArray = arr.map(function(val, i){
-        return val * i;
-    })
-    return myArray;
+function valTimesIndex(arr) {
+  let myArray = arr.map(function (val, i) {
+    return val * i;
+  });
+  return myArray;
 }
 
 /*
@@ -130,11 +130,11 @@ Examples:
     extractKey([{name: 'Elie'}, {name: 'Tim'}, {name: 'Matt'}, {name: 'Colt'}], 'name') // ['Elie', 'Tim', 'Matt', 'Colt']
 */
 
-function extractKey(arr, key){
-    let myArray = arr.map(function(val){
-        return val[key]
-    });
-    return myArray;
+function extractKey(arr, key) {
+  let myArray = arr.map(function (val) {
+    return val[key];
+  });
+  return myArray;
 }
 
 /*
@@ -144,11 +144,11 @@ Examples:
     extractFullName([{first: 'Elie', last:"Schoppik"}, {first: 'Tim', last:"Garcia"}, {first: 'Matt', last:"Lane"}, {first: 'Colt', last:"Steele"}]) // ['Elie Schoppik', 'Tim Garcia', 'Matt Lane', 'Colt Steele']
 */
 
-function extractFullName(arr){
-    let myArray = arr.map(function(val){
-        return `${val.first} ${val.last}`
-    });
-    return myArray;
+function extractFullName(arr) {
+  let myArray = arr.map(function (val) {
+    return `${val.first} ${val.last}`;
+  });
+  return myArray;
 }
 
 /*
@@ -159,10 +159,10 @@ Examples:
 */
 
 function filterByValue(arr, key) {
-    let myArray = arr.filter(function(val){
-        return val[key]
-    });
-    return myArray;
+  let myArray = arr.filter(function (val) {
+    return val[key];
+  });
+  return myArray;
 }
 
 /*
@@ -174,10 +174,10 @@ Examples:
 */
 
 function find(arr, searchValue) {
-    let myArray = arr.filter(function(val){
-        return val === searchValue
-    })[0];
-    return myArray;
+  let myArray = arr.filter(function (val) {
+    return val === searchValue;
+  })[0];
+  return myArray;
 }
 
 /*
@@ -188,11 +188,10 @@ Examples:
 */
 
 function findInObj(arr, key, searchValue) {
-    let myArray = arr.filter(function(val){
-        return val[key] === searchValue;
-        
-    })[0];
-    return myArray;
+  let myArray = arr.filter(function (val) {
+    return val[key] === searchValue;
+  })[0];
+  return myArray;
 }
 
 /*
@@ -205,12 +204,12 @@ Examples:
 */
 
 function removeVowels(str) {
-    let myArray = str.toLowerCase().split("");
+  let myArray = str.toLowerCase().split('');
 
-   let finalArray = myArray.filter(function(val){
-        return 'aeiou'.indexOf(val) === -1;
-    });
-    return finalArray.join("");
+  let finalArray = myArray.filter(function (val) {
+    return 'aeiou'.indexOf(val) === -1;
+  });
+  return finalArray.join('');
 }
 
 /*
@@ -222,10 +221,10 @@ Examples:
 */
 
 function doubleOddNumbers(arr) {
-   let myArray = arr.filter(function(val){
-        return val % 2 !== 0;
-    })
-    return myArray.map(function(val){
-        return val * 2;
-    })
+  let myArray = arr.filter(function (val) {
+    return val % 2 !== 0;
+  });
+  return myArray.map(function (val) {
+    return val * 2;
+  });
 }
